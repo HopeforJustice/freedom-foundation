@@ -147,6 +147,9 @@ export default function Welcome() {
 					</form>
 				</div>
 			)}
+			<p className="fixed bottom-0 z-50 right-0">
+				country detected: {selection.country}
+			</p>
 		</div>
 	);
 }

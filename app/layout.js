@@ -52,7 +52,23 @@ export const metadata = {
 	},
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+	let data;
+	let country = "Default";
+
+	if (!process.env.VERCEL_ENV === "development") {
+		const res = await fetch(`${baseUrl}/api/geo`, {
+			cache: "no-store",
+		});
+		data = await res.json();
+	}
+
+	if (data && data.country) {
+		country = data.country;
+	}
+	console.log("Country:", country);
+
 	return (
 		<html
 			lang="en"
@@ -61,7 +77,7 @@ export default function RootLayout({ children }) {
 			<body className="min-h-full bg-hfj-white max-w-dvw overflow-x-hidden text-hfj-black font-apercu w-full">
 				<div className="w-full relative">
 					<Suspense>
-						<SelectionProvider>
+						<SelectionProvider country={country}>
 							<Header />
 							<div className="relative">{children}</div>
 						</SelectionProvider>

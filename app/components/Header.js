@@ -8,7 +8,7 @@ export default function Header() {
 	const { selection, setSelection } = useSelection();
 	return (
 		<>
-			<div className="w-full p-2 xs:p-4 flex justify-between relative z-10">
+			<div className="w-full p-2 xs:p-4 flex justify-between relative z-10 items-center lg:items-start">
 				<Link href="https://hopeforjustice.org" target="_blank">
 					<Image
 						src="./hfj-logo.svg"

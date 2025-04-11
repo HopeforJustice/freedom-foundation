@@ -19,27 +19,27 @@ export default function PriorityProjects() {
 		},
 		{
 			title: "Fund Hope for Justice's policy work in the U.S.",
-			link: "#",
+			link: "/fund-hope-for-justice-policy-work-in-the-us",
 			img: "/us-1.jpg",
 			altText: "Decorative image representing U.S.A",
 		},
 
 		{
 			title: "Fund Outreach and protection for vulnerable youth in Tennessee",
-			link: "#",
+			link: "/fund-outreach-and-protection-for-vulnerable-youth-in-tennessee",
 			img: "/some-tale-14vAnL75uM4-unsplash.jpg",
 			altText: "Stock photo of young girl",
 		},
 		{
 			title: "Fund safe shelter and care for exploited children in Ethiopia",
-			link: "#",
+			link: "/fund-safe-shelter-and-care-for-exploited-children-in-ethiopia",
 			img: "/childreninAddis.jpg",
 			altText: "Happy Children in Addis",
 		},
 
 		{
 			title: "Fund victim identification and support in the Midwest",
-			link: "#",
+			link: "/fund-victim-identification-and-support-in-the-midwest",
 			img: "/interview-statement-police-woman-victim--AdobeStock_245201824.jpg",
 			altText: "Stock photo of police with woman",
 		},

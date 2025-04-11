@@ -10,9 +10,9 @@ export default function ProjectOutcomes({ outcomes, budget }) {
 					<h2 className="font-fk text-4xl lg:text-6xl mb-8">
 						Project Outcomes - <Highlight>What your investment funds</Highlight>
 					</h2>
-					<p className="my-8 text-xl">
-						To fund this project we need to meet the total budgeted costs for
-						2025/2026: <span className="font-bold text-hfj-red">{budget}</span>
+					<p className="my-8 text-2xl lg:text-3xl">
+						Fundraising Goal:{" "}
+						<span className="font-bold text-hfj-red">{budget}</span>
 					</p>
 					<ul className="flex flex-wrap gap-4 lg:text-lg w-full">
 						{outcomes.map((o, i) => {

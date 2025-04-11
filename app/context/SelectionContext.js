@@ -3,8 +3,12 @@ import { createContext, useContext, useState } from "react";
 
 const SelectionContext = createContext();
 
-export function SelectionProvider({ children }) {
-	const [selection, setSelection] = useState({ type: null, name: null });
+export function SelectionProvider({ children, country }) {
+	const [selection, setSelection] = useState({
+		type: null,
+		name: null,
+		country: country,
+	});
 	return (
 		<SelectionContext.Provider value={{ selection, setSelection }}>
 			{children}

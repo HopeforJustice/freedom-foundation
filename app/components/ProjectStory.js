@@ -12,6 +12,7 @@ export default function ProjectStory({
 	imageAlt,
 	children,
 	titleTop = false,
+	smallTitle = false,
 }) {
 	if (imagePosition === "right") {
 		return (
@@ -19,7 +20,14 @@ export default function ProjectStory({
 				<div className="my-8 md:my-16 lg:my-20">
 					<div className="xl:grid xl:grid-cols-2 xl:grid-rows-[auto_1fr] xl:gap-x-12 xl:mt-40">
 						<div className="flex flex-col justify-start items-start z-20 relative xl:col-start-1 xl:self-start xl:-mr-[200px] xl:-mt-20">
-							<h2 className="mx-4 text-4xl xs:text-5xl lg:text-6xl xl:text-8xl leading-tight font-fk text-white text-balance justify-end">
+							<h2
+								className={clsx(
+									"mx-4 leading-tight font-fk text-white text-balance justify-end",
+									smallTitle
+										? "text-2xl xs:text-3xl lg:text-5xl xl:text-6xl"
+										: "text-4xl xs:text-5xl lg:text-6xl xl:text-8xl"
+								)}
+							>
 								<Highlight>{title}</Highlight>
 							</h2>
 							{quote && (

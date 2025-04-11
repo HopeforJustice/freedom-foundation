@@ -11,7 +11,9 @@ export default function BoxQuote({ quote, image, author, imageAlt }) {
 					{/* author image and text */}
 					<div className="flex gap-4 md:gap-8 justify-center w-full items-center md:max-w-md mx-auto mt-8">
 						<div className="rounded-full overflow-clip">
-							<Image width={80} height={80} src={image} alt={imageAlt} />
+							{image && (
+								<Image width={80} height={80} src={image} alt={imageAlt} />
+							)}
 						</div>
 						<p className="text-sm md:text-base">{author}</p>
 					</div>

@@ -84,7 +84,7 @@ export default function TailoredUpdates() {
 								Impact slides for{" "}
 								<span className="capitalize">{selection.name}</span>
 							</p>
-							<p className="text-white font-fk text-4xl px-20 absolute top-[90px] text-center w-full">
+							<p className="text-white font-fk text-3xl sm:text-4xl px-20 absolute top-[90px] text-center w-full">
 								See the impact you have made this quarter
 							</p>
 						</div>
