@@ -56,8 +56,8 @@ export default async function RootLayout({ children }) {
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 	let data;
 	let country = "Default";
-
-	if (!process.env.VERCEL_ENV === "development") {
+	if (process.env.VERCEL_ENV !== "development") {
+		console.log("Fetching country data");
 		const res = await fetch(`${baseUrl}/api/geo`, {
 			cache: "no-store",
 		});
