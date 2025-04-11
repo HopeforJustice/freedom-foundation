@@ -39,18 +39,18 @@ const apercu = localFont({
 export const metadata = {
 	title: {
 		// template: '%s - Docs',
-		default: "Hope for Justice Design",
+		default: "Hope for Justice | Freedom Foundation",
 	},
-	description: "Hope for Justice brand guide.",
-	robots: {
-		index: false,
-		follow: false,
-		googleBot: {
-			index: false,
-			follow: false,
-			noimageindex: false,
-		},
-	},
+	description: "Hope for Justice Freedom Foundation",
+	// robots: {
+	// 	index: false,
+	// 	follow: false,
+	// 	googleBot: {
+	// 		index: false,
+	// 		follow: false,
+	// 		noimageindex: false,
+	// 	},
+	// },
 };
 
 export default async function RootLayout({ children }) {
