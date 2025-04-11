@@ -1,7 +1,6 @@
 // app/api/geo/route.js
-
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { headers } from "next/headers";
 import { WebServiceClient } from "@maxmind/geoip2-node";
 
 const client = new WebServiceClient(
@@ -11,11 +10,9 @@ const client = new WebServiceClient(
 );
 
 export async function GET() {
-	const headersList = await headers(); // ⬅️ await the async call now
-	const forwardedFor = headersList.get("x-forwarded-for");
-	const ip = forwardedFor?.split(",")[0]?.trim() || "1.1.1.1"; // fallback IP
-	console.log("x-vercel-ip-country:", headersList.get("x-vercel-ip-country"));
-	console.log("x-forwarded-for:", forwardedFor);
+	const ip = cookies().get("user-ip")?.value || "0.0.0.0";
+	const country = cookies().get("user-country")?.value || "Default";
+	console.log("country:", country);
 	console.log("IP:", ip);
 	try {
 		const geo = await client.country(ip);
