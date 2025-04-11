@@ -1,26 +1,50 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
+@theme {
+  --breakpoint-xxs: 23rem;
+  --breakpoint-xs: 30rem;
+
+  --font-fk: "var(--font-fk)", "sans-serif"; 
+  --font-apercu: "var(--font-apercu)", "sans-serif"; 
+  --font-canela: "var(--font-canela)", "serif";
+  --color-hfj-black: #212322;
+  --color-hfj-red: #D6001C;
+  --color-hfj-white: #F5F5F5;
+  --max: 1536px;
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-ping: ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  @keyframes ping {
+    70% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100%{
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  }
+
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+} */
