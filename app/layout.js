@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import { SelectionProvider } from "./context/SelectionContext";
+import { Suspense } from "react";
 
 const canela = localFont({
 	src: "fonts/Canela-Medium.woff2",
@@ -59,10 +60,12 @@ export default function RootLayout({ children }) {
 		>
 			<body className="min-h-full bg-hfj-white max-w-dvw overflow-x-hidden text-hfj-black font-apercu w-full">
 				<div className="w-full relative">
-					<SelectionProvider>
-						<Header />
-						<div className="relative">{children}</div>
-					</SelectionProvider>
+					<Suspense>
+						<SelectionProvider>
+							<Header />
+							<div className="relative">{children}</div>
+						</SelectionProvider>
+					</Suspense>
 				</div>
 			</body>
 		</html>

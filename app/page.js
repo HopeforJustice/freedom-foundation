@@ -6,6 +6,7 @@ import { useSelection } from "./context/SelectionContext";
 import MainIntro from "./components/MainIntro";
 import PriorityProjects from "./components/PriorityProjects";
 import TailoredUpdates from "./components/TailoredUpdates";
+import { Suspense } from "react";
 
 export default function Home() {
 	const { selection, setSelection } = useSelection();
