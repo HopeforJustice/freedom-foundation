@@ -14,7 +14,9 @@ export async function GET() {
 	const headersList = await headers(); // ⬅️ await the async call now
 	const forwardedFor = headersList.get("x-forwarded-for");
 	const ip = forwardedFor?.split(",")[0]?.trim() || "1.1.1.1"; // fallback IP
-
+	console.log("x-vercel-ip-country:", headersList.get("x-vercel-ip-country"));
+	console.log("x-forwarded-for:", forwardedFor);
+	console.log("IP:", ip);
 	try {
 		const geo = await client.country(ip);
 		return NextResponse.json({ country: geo.country.isoCode });
