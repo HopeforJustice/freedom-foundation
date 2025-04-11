@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import { SelectionProvider } from "./context/SelectionContext";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 
 const canela = localFont({
 	src: "fonts/Canela-Medium.woff2",
@@ -53,21 +54,11 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-	let data;
-	let country = "Default";
-	if (process.env.VERCEL_ENV !== "development") {
-		console.log("Fetching country data");
-		const res = await fetch(`${baseUrl}/api/geo`, {
-			cache: "no-store",
-		});
-		data = await res.json();
-	}
+	let cookieData = await cookies();
+	let country = cookieData.get("user-country")?.value || "Default";
+	let city = cookieData.get("user-city")?.value || "Default City";
 
-	if (data && data.country) {
-		country = data.country;
-	}
-	console.log("Country:", country);
+	console.log("Country:", country, "City:", city);
 
 	return (
 		<html
