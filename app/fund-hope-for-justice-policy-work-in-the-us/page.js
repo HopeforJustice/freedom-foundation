@@ -45,6 +45,8 @@ export default function Page() {
 		title: "U.S. policy work that will transform how survivors are treated",
 		altText: "Decorative image representing U.S.A",
 		budget: "£207,205",
+		budgetNumber: 207205,
+		id: "ff-2",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: ["this page is in progress, content tbc", "... "],
@@ -58,7 +60,7 @@ export default function Page() {
 			"Provision of essential items and emergency support to meet basic needs and prevent destitution and re-trafficking (food vouchers, clothing, footwear, toiletries, mobile phone & top-ups, translation services, transport, and emergency accommodation).",
 			"Survivors informed about their legal rights and entitlements, and more able to access these.",
 		],
-		link: "#",
+		link: "/pre-donation",
 	};
 	return (
 		// page wrapper
@@ -70,6 +72,8 @@ export default function Page() {
 				altText={project.altText}
 				title={project.title}
 				link={project.link}
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
@@ -130,6 +134,8 @@ export default function Page() {
 				color="red"
 				link={project.link}
 				buttonText="Take the next step"
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<BoxQuote
 				image="/asc.jpg"
@@ -143,6 +149,8 @@ export default function Page() {
 				color="white"
 				link={project.link}
 				buttonText="Take the next step"
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<p className="text-sm my-4 w-full px-4 text-center">
 				*Names and images changed to protect identities

@@ -45,6 +45,8 @@ export default function Page() {
 		title: "aftercare for child survivors of human trafficking",
 		altText: "boy thinking",
 		budget: "£207,205",
+		budgetNumber: 207205,
+		id: "ff-1",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
@@ -62,7 +64,7 @@ export default function Page() {
 			"Every child to be reintegrated from the Lighthouse to a safe family setting as soon as possible, or (where appropriate and in their interests) helped to live safely and independently in the community with sustainable employment.",
 			"Every child to receive follow-up visits from our team.",
 		],
-		link: "#",
+		link: "/pre-donation",
 	};
 	return (
 		// page wrapper
@@ -74,6 +76,8 @@ export default function Page() {
 				altText={project.altText}
 				title={project.title}
 				link={project.link}
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
@@ -133,6 +137,8 @@ export default function Page() {
 				color="red"
 				link={project.link}
 				buttonText="Take the next step"
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<BoxQuote
 				image="/global-fund.svg"
@@ -146,6 +152,8 @@ export default function Page() {
 				color="white"
 				link={project.link}
 				buttonText="Take the next step"
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<p className="text-sm my-4 w-full px-4 text-center">
 				*Names and images changed to protect identities

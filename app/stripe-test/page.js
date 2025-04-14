@@ -7,7 +7,7 @@ const stripePromise = loadStripe(
 	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
 
-export default function RangeSlider() {
+export default function Page() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [amount, setAmount] = useState(2000);
 	const value = 1000;

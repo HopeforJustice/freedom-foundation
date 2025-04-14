@@ -45,6 +45,8 @@ export default function Page() {
 		title: "victim identification and support in the Midwest",
 		altText: "Stock photo of police with woman",
 		budget: "£207,205",
+		budgetNumber: 207205,
+		id: "ff-6",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
@@ -60,7 +62,7 @@ export default function Page() {
 			"Survivors supported in their journey to justice through the criminal justice system, with Hope for Justice providing evidence-gathering and expert testimony.",
 			"Survivor screenings and onward referrals to specialized services where necessary.",
 		],
-		link: "#",
+		link: "/pre-donation",
 	};
 	return (
 		// page wrapper
@@ -72,6 +74,8 @@ export default function Page() {
 				altText={project.altText}
 				title={project.title}
 				link={project.link}
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
@@ -127,6 +131,8 @@ export default function Page() {
 				color="red"
 				link={project.link}
 				buttonText="Take the next step"
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<ProjectStory
 				title="Hope for Justice works to investigate potential human trafficking cases and identify victims."
@@ -172,6 +178,8 @@ export default function Page() {
 				color="white"
 				link={project.link}
 				buttonText="Take the next step"
+				projectId={project.id}
+				budgetNumber={project.budgetNumber}
 			/>
 			<p className="text-sm my-4 w-full px-4 text-center">
 				*Names and images changed to protect identities

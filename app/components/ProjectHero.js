@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "./Container";
 import Link from "next/link";
+import { useSelection } from "../context/SelectionContext";
 
 export default function ProjectHero({
 	donorName,
@@ -9,7 +10,27 @@ export default function ProjectHero({
 	altText,
 	title,
 	link,
+	projectId,
+	budgetNumber,
 }) {
+	const { selection, setSelection } = useSelection();
+	const handleNextStep = () => {
+		setSelection({
+			...selection,
+			projectId: projectId,
+			projectTitle: title,
+			budgetNumber: budgetNumber,
+		});
+		localStorage.setItem(
+			"selection",
+			JSON.stringify({
+				...selection,
+				projectId: projectId,
+				projectTitle: title,
+				budgetNumber: budgetNumber,
+			})
+		);
+	};
 	return (
 		<Container>
 			<h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-7xl font-fk px-4 mb-4 mt-4 md:text-center md:mt-10 md:mb-6 xl:mb-12 xl:mt-12">
@@ -56,6 +77,7 @@ export default function ProjectHero({
 							our Freedom Foundation
 						</p>
 						<Link
+							onClick={handleNextStep}
 							href={link}
 							className="w-full block bg-hfj-black rounded-sm text-center text-white px-2.5 py-1.5 md:py-2 mt-4"
 						>

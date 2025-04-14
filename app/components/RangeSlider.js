@@ -1,33 +1,4 @@
-"use client"; // Needed for frontend components
-
-import { useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-
-const stripePromise = loadStripe(
-	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-);
-
-export default function RangeSlider() {
-	const [isLoading, setIsLoading] = useState(false);
-	const [amount, setAmount] = useState(2000);
-	const handlePayment = async (amount) => {
-		setIsLoading(true);
-		const stripe = await stripePromise;
-		const amountCents = amount * 100;
-
-		const checkoutSession = await fetch("/api/checkout", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ amount: amountCents }),
-		}).then((res) => res.json());
-
-		await stripe.redirectToCheckout({ sessionId: checkoutSession.id });
-	};
-
-	const handleSliderChange = (value) => {
-		setAmount(value);
-	};
-
+export default function RangeSlider({ handleSliderChange, initialNotch }) {
 	return (
 		<>
 			<div className="relative w-full">
@@ -41,11 +12,11 @@ export default function RangeSlider() {
 				</div>
 				<input
 					type="range"
-					min="1000"
-					max="6000"
-					defaultValue={value}
-					onChange={(e) => onChange(Number(e.target.value))}
-					step="1000"
+					min="1"
+					max="6"
+					defaultValue={initialNotch}
+					onChange={(e) => handleSliderChange(Number(e.target.value))}
+					step="1"
 					className="relative w-full appearance-none outline-none focus:outline-none
             [&::-webkit-slider-runnable-track]:w-full [&::-webkit-slider-runnable-track]:h-[3px] [&::-webkit-slider-runnable-track]:bg-gray-300 [&::-webkit-slider-runnable-track]:rounded-md
             [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-[30px] [&::-webkit-slider-thumb]:h-[40px] [&::-webkit-slider-thumb]:bg-[#d21220] [&::-webkit-slider-thumb]:rounded-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:duration-200 [&::-webkit-slider-thumb]:ease-in-out [&::-webkit-slider-thumb]:mt-[-18px] [&::-webkit-slider-thumb]:scale-110 hover:[&::-webkit-slider-thumb]:scale-125

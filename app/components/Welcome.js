@@ -36,7 +36,7 @@ export default function Welcome() {
 			ease: "power2.out",
 			onComplete: () => {
 				setType(choice);
-				setSelection({ type: choice, name: null });
+				setSelection({ ...selection, type: choice });
 				setStep("name");
 			},
 		});
@@ -50,12 +50,11 @@ export default function Welcome() {
 			y: -50,
 			duration: 0.5,
 			onComplete: () => {
-				setSelection({ type: type, name: nameInput });
+				setSelection({ ...selection, name: nameInput });
+				console.log(selection);
 			},
 		});
 	};
-
-	console.log("Country:", selection.country);
 
 	return (
 		<div ref={containerRef} className="animate-fade-in">

@@ -14,14 +14,27 @@ export default function Home() {
 	const searchParams = useSearchParams();
 
 	useEffect(() => {
+		const storedSelection = localStorage.getItem("selection");
+
 		const name = searchParams.get("name");
 		const type = searchParams.get("type");
 
-		if (type && name) {
-			setSelection({ name, type });
+		// Only set if we *don't* already have this data
+		if (type && name && (!selection.name || !selection.type)) {
+			const newSelection = { ...selection, name, type };
+			setSelection(newSelection);
+			localStorage.setItem("selection", JSON.stringify(newSelection));
 		}
+
+		if (storedSelection) {
+			const parsed = JSON.parse(storedSelection);
+			setSelection(parsed);
+			setLoading(false);
+			return;
+		}
+
 		setLoading(false);
-	}, [searchParams, setSelection]);
+	}, [searchParams, setSelection, selection.name, selection.type]);
 
 	if (loading) {
 		return null;

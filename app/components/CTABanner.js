@@ -1,11 +1,35 @@
 import Container from "./Container";
 import Link from "next/link";
 
-export default function CTABanner({ title, color, buttonText, link }) {
+export default function CTABanner({
+	title,
+	color,
+	buttonText,
+	link,
+	projectId,
+	budgetNumber,
+}) {
 	const bg = color === "red" ? "bg-hfj-red" : "bg-white";
 	const titleColor = color === "red" ? "text-white" : "text-hfj-black";
 	const buttonColor = color === "red" ? "bg-white" : "bg-hfj-red";
 	const buttonTextColor = color === "red" ? "text-hfj-black" : "text-white";
+	const handleNextStep = () => {
+		setSelection({
+			...selection,
+			projectId: projectId,
+			projectTitle: title,
+			budgetNumber: budgetNumber,
+		});
+		localStorage.setItem(
+			"selection",
+			JSON.stringify({
+				...selection,
+				projectId: projectId,
+				projectTitle: title,
+				budgetNumber: budgetNumber,
+			})
+		);
+	};
 	return (
 		<div className={`w-full my-8 md:my-16 lg:my-20 ${bg}`}>
 			<Container>
@@ -18,6 +42,7 @@ export default function CTABanner({ title, color, buttonText, link }) {
 					<Link
 						className={`${buttonColor} ${buttonTextColor} rounded-[60px] px-4 py-2 lg:px-6 lg:py-3 font-bold shadow lg:text-lg`}
 						href={link}
+						onClick={handleNextStep}
 					>
 						{buttonText}
 					</Link>

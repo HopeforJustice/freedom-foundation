@@ -51,6 +51,7 @@ export default function PriorityProjects() {
 			contentReady: true,
 		},
 	];
+	console.log("selection", selection);
 	return (
 		<div className="flex flex-col items-center px-4 mt-10 sm:mt-14 md:mt-18 lg:mt-22 animate-fade-in">
 			<h2 className="text-3xl font-fk xs:text-4xl lg:text-5xl xl:text-6xl mb-6 lg:mb-12">

@@ -7,8 +7,8 @@ export default function MainIntro() {
 			<h1 className="font-fk text-4xl xs:text-5xl md:text-6xl xl:text-8xl text-center max-w-[30ch] mb-4 md:mb-8 lg:mb-12">
 				<span className="capitalize">{selection.name}</span>
 				{selection.type === "organisation"
-					? " can make an immediate 'impact that helps survivors of trafficking by funding one of our priority projects"
-					: ", you can make an immediate impact on survivors of trafficking by funding one of our priority projects"}
+					? " can make an immediate impact that helps survivors of trafficking by funding one of our priority projects"
+					: ", you can make an immediate impact that helps survivors of trafficking by funding one of our priority projects"}
 			</h1>
 			<p className="font-apercu max-w-[50ch] text-center md:text-xl lg:text-2xl">
 				And by doing so, you would become part of Hope for Justice&apos;s
