@@ -9,6 +9,7 @@ export default function CTABanner({
 	link,
 	projectId,
 	budgetNumber,
+	projectTitle,
 }) {
 	const bg = color === "red" ? "bg-hfj-red" : "bg-white";
 	const titleColor = color === "red" ? "text-white" : "text-hfj-black";
@@ -27,7 +28,7 @@ export default function CTABanner({
 			JSON.stringify({
 				...selection,
 				projectId: projectId,
-				projectTitle: title,
+				projectTitle: projectTitle,
 				budgetNumber: budgetNumber,
 			})
 		);

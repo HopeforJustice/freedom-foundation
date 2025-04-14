@@ -131,6 +131,7 @@ export default function Page() {
 				buttonText="Take the next step"
 				projectId={project.id}
 				budgetNumber={project.budgetNumber}
+				projectTitle={project.title}
 			/>
 			<BoxQuote
 				image=""
@@ -146,6 +147,7 @@ export default function Page() {
 				buttonText="Take the next step"
 				projectId={project.id}
 				budgetNumber={project.budgetNumber}
+				projectTitle={project.title}
 			/>
 			<p className="text-sm my-4 w-full px-4 text-center">
 				*Names and images changed to protect identities
