@@ -1,5 +1,6 @@
 import Container from "./Container";
 import Link from "next/link";
+import { useSelection } from "../context/SelectionContext";
 
 export default function CTABanner({
 	title,
@@ -13,6 +14,7 @@ export default function CTABanner({
 	const titleColor = color === "red" ? "text-white" : "text-hfj-black";
 	const buttonColor = color === "red" ? "bg-white" : "bg-hfj-red";
 	const buttonTextColor = color === "red" ? "text-hfj-black" : "text-white";
+	const { selection, setSelection } = useSelection();
 	const handleNextStep = () => {
 		setSelection({
 			...selection,

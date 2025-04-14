@@ -114,6 +114,9 @@ export default function Page() {
 		setAmount(value);
 		console.log(amount);
 	};
+	if (!selection.projectTitle) {
+		return null;
+	}
 	return (
 		<Container>
 			<div className="px-4 mt-10">
