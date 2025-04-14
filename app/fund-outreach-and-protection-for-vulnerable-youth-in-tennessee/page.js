@@ -78,7 +78,7 @@ export default function Page() {
 			<ProjectStory
 				title="You will help young people in TN"
 				quote=""
-				image="/imsa-1.jpg"
+				image="/tn-2.jpg"
 				imagePosition="left"
 				imageAlt="Image used for illustration purposes."
 				imageCredit="Image used for illustration purposes."

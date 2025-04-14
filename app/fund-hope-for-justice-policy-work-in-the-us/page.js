@@ -42,7 +42,7 @@ export default function Page() {
 
 	const project = {
 		image: "/us-1.jpg",
-		title: "Hope for Justice's policy work in the U.S.",
+		title: "U.S. policy work that will transform how survivors are treated",
 		altText: "Decorative image representing U.S.A",
 		budget: "£207,205",
 		intro: {

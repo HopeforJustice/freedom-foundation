@@ -49,7 +49,7 @@ export default function Page() {
 			title: "Together, we can make a life-changing impact",
 			text: [
 				"Hope for Justice Lighthouses in Uganda’s capital city, Kampala, have for many years offered a place of safety and healing for child survivors of trafficking and those most vulnerable to being targeted. In the Lighthouse, children get critical services such as healthcare, catch-up education, psychosocial support and life skills, before we seek to safely reintegrate them into families and communities.",
-				"With your help we can continue to advocate for them as they try to understand and navigate the complex systems they face during their recovery from trafficking, empowering them to make informed decisions.",
+				"With your help, we can reunite more children with their families and give each child the care they need.",
 			],
 		},
 		projectOutcomes: [

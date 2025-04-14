@@ -10,31 +10,37 @@ export default function PriorityProjects() {
 			link: "/fund-aftercare-for-child-survivors-of-human-trafficking",
 			img: "/boy-thinking-aged-9-12.jpg",
 			altText: "Boy thinking",
+			contentReady: true,
 		},
 		{
 			title: "Fund independent advocacy for survivors of modern slavery",
 			link: "/fund-independent-advocacy-for-survivors-of-modern-slavery",
 			img: "/HFJ-53.jpg",
 			altText: "Independant modern slavery advocacy worker",
+			contentReady: true,
 		},
 		{
-			title: "Fund Hope for Justice's policy work in the U.S.",
+			title:
+				"Fund U.S. policy work that will transform how survivors are treated",
 			link: "/fund-hope-for-justice-policy-work-in-the-us",
 			img: "/us-1.jpg",
 			altText: "Decorative image representing U.S.A",
+			contentReady: false,
 		},
 
 		{
-			title: "Fund Outreach and protection for vulnerable youth in Tennessee",
+			title: "Fund outreach and protection for vulnerable youth in Tennessee",
 			link: "/fund-outreach-and-protection-for-vulnerable-youth-in-tennessee",
 			img: "/some-tale-14vAnL75uM4-unsplash.jpg",
 			altText: "Stock photo of young girl",
+			contentReady: true,
 		},
 		{
 			title: "Fund safe shelter and care for exploited children in Ethiopia",
 			link: "/fund-safe-shelter-and-care-for-exploited-children-in-ethiopia",
 			img: "/childreninAddis.jpg",
 			altText: "Happy Children in Addis",
+			contentReady: false,
 		},
 
 		{
@@ -42,6 +48,7 @@ export default function PriorityProjects() {
 			link: "/fund-victim-identification-and-support-in-the-midwest",
 			img: "/interview-statement-police-woman-victim--AdobeStock_245201824.jpg",
 			altText: "Stock photo of police with woman",
+			contentReady: true,
 		},
 	];
 	return (
@@ -51,6 +58,9 @@ export default function PriorityProjects() {
 			</h2>
 			<div className="w-full flex-wrap grid grid-cols-12 gap-4 max-w-[1680px]">
 				{projects.map((p) => {
+					if (!p.contentReady) {
+						return null;
+					}
 					return (
 						<Link
 							href={p.link}

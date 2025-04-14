@@ -55,6 +55,8 @@ export default function Welcome() {
 		});
 	};
 
+	console.log("Country:", selection.country);
+
 	return (
 		<div ref={containerRef} className="animate-fade-in">
 			{/* initial welcome and type select */}
@@ -122,7 +124,7 @@ export default function Welcome() {
 				>
 					<p className="text-xl md:text-2xl font-bold mb-8 max-w-[30ch]">
 						{type === "individual"
-							? "Let's get to know eachother a bit more, what is your first name?"
+							? "Let's get to know each other a bit more. What is your first name?"
 							: "What is the name of your organisation?"}
 					</p>
 					<form
@@ -147,9 +149,6 @@ export default function Welcome() {
 					</form>
 				</div>
 			)}
-			<p className="fixed bottom-0 z-50 right-0">
-				country detected: {selection.country}
-			</p>
 		</div>
 	);
 }

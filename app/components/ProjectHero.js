@@ -52,8 +52,8 @@ export default function ProjectHero({
 					{/* next step content */}
 					<div className="rounded-lg mx-4 p-4 md:self-end sm:p-6 sm:text-center xl:text-lg md:mx-0 bg-white mt-4 font-apercu font-bold md:max-w-[360px] lg:max-w-[420px]">
 						<p className="">
-							Make a life changing impact today and become part of Freedom
-							Foundation
+							Make a life-changing impact today by funding this project through
+							our Freedom Foundation
 						</p>
 						<Link
 							href={link}

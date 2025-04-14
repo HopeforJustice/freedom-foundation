@@ -48,7 +48,7 @@ export default function Page() {
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
-				"Hope for Justice UK has provided independent advocacy to survivors for over ten years, taking a survivor-centred and holistic approach and responding to what survivors have asked for: a single point of trust. Our Independent Modern Slavery Advocates, or IMSAs, are trained experts who consider the survivor’s social needs and legal rights.",
+				"Hope for Justice UK has provided independent advocacy to survivors for over ten years, taking a survivor-centred and holistic approach and responding to what survivors have asked for: a single point of trust. Our Independent Modern Slavery Advocates, or IMSAs, are trained experts who consider each survivor’s social needs and legal rights.",
 				"With your help we can continue to advocate for them as they try to understand and navigate the complex systems they face during their recovery from trafficking, empowering them to make informed decisions. ",
 			],
 		},

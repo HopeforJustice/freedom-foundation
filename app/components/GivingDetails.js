@@ -15,8 +15,8 @@ export default function GivingDetails({ budget }) {
 						Give with Confidence
 					</h2>
 					<p className="mb-4 text-lg max-w-4xl mx-auto">
-						To fund this project we need to meet the total budgeted costs for
-						2025/2026: <span className="text-hfj-red">{budget}</span>
+						To fully fund this project we need to meet the total budgeted costs
+						for 2025/2026: <span className="text-hfj-red">{budget}</span>
 					</p>
 					<p className="opacity-50 text-lg">
 						<span className="lg:hidden">Tap</span>
@@ -50,18 +50,18 @@ export default function GivingDetails({ budget }) {
 							<h3 className="text-6xl lg:text-8xl font-fk">10%</h3>
 							{!showDetails && (
 								<p className="animate-fade-in max-w-[500px] font-bold text-sm lg:text-lg ">
-									The remaining 10 percent support costs to enable safe and
-									sustainable operations (including administration, security,
-									equipment, oversight and governance)
+									The remaining 10% allows this project to be run in a safe and
+									sustainable way by covering support costs including
+									administration, security, equipment, oversight and governance.
 								</p>
 							)}
 						</div>
 					</div>
 
 					<p className="mb-8 text-lg max-w-4xl mx-auto">
-						Any donations received above this project’s budget will be relocated
-						to other Hope for Justice projects and costs around the world in the
-						service of our mission to end modern-day slavery.
+						Any donations received above this project’s budget will be
+						reallocated to other Hope for Justice projects and costs around the
+						world in the service of our mission to end modern-day slavery.
 					</p>
 					<p className="mb-4 text-sm max-w-4xl mx-auto">
 						<strong>The minimum contribution to this project: £1,000.</strong>{" "}
