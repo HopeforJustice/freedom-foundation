@@ -5,10 +5,10 @@ import { useSelection } from "../context/SelectionContext";
 import Container from "../components/Container";
 import Highlight from "../components/Highlight";
 import RangeSlider from "../components/RangeSlider";
+import { redirect } from "next/navigation";
 
 export default function Page() {
 	const { selection, setSelection } = useSelection();
-	// console.log(selection);
 
 	const [loading, setLoading] = useState(true);
 	const [amount, setAmount] = useState(1000);
@@ -19,16 +19,6 @@ export default function Page() {
 	useEffect(() => {
 		const storedSelection = localStorage.getItem("selection");
 
-		const name = searchParams.get("name");
-		const type = searchParams.get("type");
-
-		// Only set if we *don't* already have this data
-		if (type && name && (!selection.name || !selection.type)) {
-			const newSelection = { ...selection, name, type };
-			setSelection(newSelection);
-			localStorage.setItem("selection", JSON.stringify(newSelection));
-		}
-
 		if (storedSelection) {
 			const parsed = JSON.parse(storedSelection);
 			setSelection(parsed);
@@ -37,8 +27,9 @@ export default function Page() {
 		}
 
 		setLoading(false);
-	}, [searchParams, setSelection, selection.name, selection.type]);
+	}, [searchParams, setSelection]);
 
+	// for imsa calcs
 	useEffect(() => {
 		if (amount === 4000) {
 			setMonthNumber(2);
@@ -89,6 +80,15 @@ export default function Page() {
 	if (loading) {
 		return null;
 	}
+	if (
+		!selection.projectTitle ||
+		!selection.projectId ||
+		!selection.budgetNumber ||
+		!selection.name ||
+		!selection.type
+	) {
+		redirect("/");
+	}
 
 	const handleSliderChange = (value) => {
 		switch (value) {
@@ -114,9 +114,7 @@ export default function Page() {
 		setAmount(value);
 		console.log(amount);
 	};
-	if (!selection.projectTitle) {
-		return null;
-	}
+
 	return (
 		<Container>
 			<div className="px-4 mt-10">
@@ -156,12 +154,12 @@ export default function Page() {
 							£{amount.toLocaleString()}{" "}
 							<span className="mt-4">
 								will enable Independent Modern Slavery Advocacy for{" "}
-								<Highlight>
+								<Highlight style="small">
 									{survivorNumber}{" "}
 									{survivorNumber > 1 ? "survivors" : "survivor"}
 								</Highlight>{" "}
 								for{" "}
-								<Highlight>
+								<Highlight style="small">
 									{monthNumber} {monthNumber > 1 ? "months" : "month"}
 								</Highlight>
 							</span>
@@ -170,7 +168,7 @@ export default function Page() {
 					{amount >= selection.budgetNumber && (
 						<p className="text-xl font-bold">
 							£{amount.toLocaleString()} will fund this entire project for{" "}
-							<Highlight>1 year</Highlight>
+							<Highlight style="small">1 year</Highlight>
 						</p>
 					)}
 					{amount < 1000 && (
