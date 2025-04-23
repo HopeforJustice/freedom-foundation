@@ -44,9 +44,9 @@ export default function Page() {
 		image: "/interview-statement-police-woman-victim--AdobeStock_245201824.jpg",
 		title: "victim identification and support in the Midwest",
 		altText: "Stock photo of police with woman",
-		budget: "£207,205",
-		budgetNumber: 207205,
-		id: "ff-6",
+		budget: "£240,944",
+		budgetNumber: 240944,
+		id: "PP1010 Midwest",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
@@ -64,6 +64,11 @@ export default function Page() {
 		],
 		link: "/pre-donation",
 	};
+
+	if (selection.country === "US") {
+		project.budget = "$240,944";
+		project.budgetNumber = 240944;
+	}
 	return (
 		// page wrapper
 		<div className="animate-fade-in">
@@ -173,7 +178,7 @@ export default function Page() {
 				quote="“Partnering with Hope for Justice will allow us to help more law enforcement agencies identify traffickers and help those who need it the most.”"
 				author="Amy Veon, Criminal Intelligence Analyst at Iowa Department of Public Safety’s Division of Intelligence and Fusion Center"
 			/>
-			<GivingDetails budget={project.budget} />
+			<GivingDetails budget={project.budget} projectTitle={project.title} />
 			<CTABanner
 				title="Make a life-changing impact today!"
 				color="white"

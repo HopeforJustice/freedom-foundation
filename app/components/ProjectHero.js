@@ -12,6 +12,7 @@ export default function ProjectHero({
 	link,
 	projectId,
 	budgetNumber,
+	alternateHeadingText = null,
 }) {
 	const { selection, setSelection } = useSelection();
 	const handleNextStep = () => {
@@ -34,8 +35,18 @@ export default function ProjectHero({
 	return (
 		<Container>
 			<h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-7xl font-fk px-4 mb-4 mt-4 md:text-center md:mt-10 md:mb-6 xl:mb-12 xl:mt-12">
-				With help from {donorType === "individual" && <span>you </span>}
-				<span className="capitalize">{donorName}</span>, we can:
+				{alternateHeadingText ? (
+					<span>
+						With help from {donorType === "individual" && <span>you </span>}
+						<span className="capitalize">{donorName}</span>, we can{" "}
+						{alternateHeadingText}
+					</span>
+				) : (
+					<span>
+						With help from {donorType === "individual" && <span>you </span>}
+						<span className="capitalize">{donorName}</span>, we can:
+					</span>
+				)}
 			</h1>
 			<div className="md:grid md:grid-cols-1 md:grid-rows-1 md:px-4">
 				<div className="w-full aspect-video lg:aspect-2/1 overflow-clip px-1 md:px-0 md:col-start-1 md:row-start-1">

@@ -13,32 +13,39 @@ export default function Home() {
 	const [loading, setLoading] = useState(true);
 	const searchParams = useSearchParams();
 
-	useEffect(() => {
-		const storedSelection = localStorage.getItem("selection");
+	// useEffect(() => {
+	// 	const name = searchParams.get("name");
+	// 	const type = searchParams.get("type");
+	// 	const geoOverride = searchParams.get("geoCountry");
+	// 	const storedSelection = localStorage.getItem("selection");
 
-		const name = searchParams.get("name");
-		const type = searchParams.get("type");
+	// 	// If there are values in the URL, use them
+	// 	if (name || type || geoOverride) {
+	// 		const newSelection = {
+	// 			...selection,
+	// 			name: name || selection.name,
+	// 			type: type || selection.type,
+	// 			country: geoOverride || selection.country,
+	// 		};
 
-		// Only set if we *don't* already have this data
-		if (type && name && (!selection.name || !selection.type)) {
-			const newSelection = { ...selection, name, type };
-			setSelection(newSelection);
-			localStorage.setItem("selection", JSON.stringify(newSelection));
-		}
+	// 		setSelection(newSelection);
+	// 		localStorage.setItem("selection", JSON.stringify(newSelection));
+	// 		setLoading(false);
+	// 		return;
+	// 	}
 
-		if (storedSelection) {
-			const parsed = JSON.parse(storedSelection);
-			setSelection(parsed);
-			setLoading(false);
-			return;
-		}
+	// 	// Fallback to localStorage only if no values in URL
+	// 	if (storedSelection) {
+	// 		const parsed = JSON.parse(storedSelection);
+	// 		setSelection(parsed);
+	// 	}
 
-		setLoading(false);
-	}, [searchParams, setSelection, selection.name, selection.type]);
+	// 	setLoading(false);
+	// }, [searchParams, setSelection]);
 
-	if (loading) {
-		return null;
-	}
+	// if (loading) {
+	// 	return null;
+	// }
 
 	return (
 		<>

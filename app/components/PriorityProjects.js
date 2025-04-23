@@ -1,6 +1,6 @@
-import { useSelection } from "../context/SelectionContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useSelection } from "../context/SelectionContext";
 
 export default function PriorityProjects() {
 	const { selection } = useSelection();
@@ -11,6 +11,7 @@ export default function PriorityProjects() {
 			img: "/boy-thinking-aged-9-12.jpg",
 			altText: "Boy thinking",
 			contentReady: true,
+			order: selection.country === "US" ? 4 : 1,
 		},
 		{
 			title: "Fund independent advocacy for survivors of modern slavery",
@@ -18,6 +19,7 @@ export default function PriorityProjects() {
 			img: "/HFJ-53.jpg",
 			altText: "Independant modern slavery advocacy worker",
 			contentReady: true,
+			order: selection.country === "US" ? 6 : 2,
 		},
 		{
 			title:
@@ -25,7 +27,8 @@ export default function PriorityProjects() {
 			link: "/fund-hope-for-justice-policy-work-in-the-us",
 			img: "/us-1.jpg",
 			altText: "Decorative image representing U.S.A",
-			contentReady: false,
+			contentReady: true,
+			order: selection.country === "US" ? 2 : 3,
 		},
 
 		{
@@ -34,13 +37,15 @@ export default function PriorityProjects() {
 			img: "/some-tale-14vAnL75uM4-unsplash.jpg",
 			altText: "Stock photo of young girl",
 			contentReady: true,
+			order: selection.country === "US" ? 1 : 4,
 		},
 		{
 			title: "Fund safe shelter and care for exploited children in Ethiopia",
 			link: "/fund-safe-shelter-and-care-for-exploited-children-in-ethiopia",
 			img: "/childreninAddis.jpg",
 			altText: "Happy Children in Addis",
-			contentReady: false,
+			contentReady: true,
+			order: 5,
 		},
 
 		{
@@ -49,15 +54,16 @@ export default function PriorityProjects() {
 			img: "/interview-statement-police-woman-victim--AdobeStock_245201824.jpg",
 			altText: "Stock photo of police with woman",
 			contentReady: true,
+			order: selection.country === "US" ? 3 : 6,
 		},
 	];
-	console.log("selection", selection);
 	return (
 		<div className="flex flex-col items-center px-4 mt-10 sm:mt-14 md:mt-18 lg:mt-22 animate-fade-in">
 			<h2 className="text-3xl font-fk xs:text-4xl lg:text-5xl xl:text-6xl mb-6 lg:mb-12">
 				Priority projects you could help fund:
 			</h2>
-			<div className="w-full flex-wrap grid grid-cols-12 gap-4 max-w-[1680px]">
+			{/* including orders here to make sure the classes are compiled into the css */}
+			<div className="w-full flex-wrap grid grid-cols-12 gap-4 max-w-[1680px] order-1 order-2 order-3 order-4 order-5 order-6">
 				{projects.map((p) => {
 					if (!p.contentReady) {
 						return null;
@@ -66,7 +72,7 @@ export default function PriorityProjects() {
 						<Link
 							href={p.link}
 							key={p.title}
-							className="@container group hover:cursor-pointer relative rounded-lg bg-hfj-black col-span-12 lg:col-span-6 grid overflow-clip aspect-[1/0.55]"
+							className={`@container group hover:cursor-pointer relative rounded-lg bg-hfj-black col-span-12 lg:col-span-6 grid overflow-clip aspect-[1/0.55] order-${p.order}`}
 						>
 							{/* Image */}
 							<Image

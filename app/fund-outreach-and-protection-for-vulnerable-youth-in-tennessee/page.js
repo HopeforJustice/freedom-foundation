@@ -44,9 +44,9 @@ export default function Page() {
 		image: "/some-tale-14vAnL75uM4-unsplash.jpg",
 		title: "outreach and protection for vulnerable youth in Tennessee",
 		altText: "Stock photo of young girl",
-		budget: "£207,205",
-		budgetNumber: 207205,
-		id: "ff-4",
+		budget: "£268,897",
+		budgetNumber: 268897,
+		id: "PP1009 Tennessee",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
@@ -64,6 +64,10 @@ export default function Page() {
 		],
 		link: "/pre-donation",
 	};
+
+	if (selection.country === "US") {
+		project.budget = "$268,897";
+	}
 	return (
 		// page wrapper
 		<div className="animate-fade-in">
@@ -139,7 +143,7 @@ export default function Page() {
 				quote="“I recently took your human trafficking course. I believe I have encountered a possible victim. From taking your class, I now see the signs that my juvenile runaway may be a human trafficking victim.”"
 				author="Deputy Sheriff"
 			/>
-			<GivingDetails budget={project.budget} />
+			<GivingDetails budget={project.budget} projectTitle={project.title} />
 			<CTABanner
 				title="Make a life-changing impact today!"
 				color="white"

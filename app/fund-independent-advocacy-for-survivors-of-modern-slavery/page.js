@@ -37,6 +37,8 @@ export default function Page() {
 	}
 
 	if (!selection.name) {
+		console.log(selection);
+		console.log("no name");
 		redirect("/");
 	}
 
@@ -44,9 +46,9 @@ export default function Page() {
 		image: "/HFJ-53.jpg",
 		title: "independent advocacy for survivors of modern slavery",
 		altText: "Independant modern slavery advocacy worker",
-		budget: "£207,205",
-		budgetNumber: 207205,
-		id: "ff-3",
+		budget: "£251,398",
+		budgetNumber: 251398,
+		id: "PP1006 Advocacy",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
@@ -65,6 +67,12 @@ export default function Page() {
 		],
 		link: "/pre-donation",
 	};
+
+	if (selection.country === "US") {
+		project.budget = "$251,398";
+	}
+
+	console.log("selection", selection);
 	return (
 		// page wrapper
 		<div className="animate-fade-in">
@@ -147,7 +155,7 @@ export default function Page() {
 				quote="“This programme is a great example of a collaborative approach that places survivors’ needs at the heart of it. The IMSAs’ advocacy work for victims and survivors of the most appalling crimes of modern slavery and human trafficking is so important. The IMSAs demonstrate a model that works, and it is essential that more victims and survivors have access to the programme.”"
 				author="Eleanor Lyons, UK Independent Anti-Slavery Commissioner"
 			/>
-			<GivingDetails budget={project.budget} />
+			<GivingDetails budget={project.budget} projectTitle={project.title} />
 			<CTABanner
 				title="Make a life-changing impact today!"
 				color="white"

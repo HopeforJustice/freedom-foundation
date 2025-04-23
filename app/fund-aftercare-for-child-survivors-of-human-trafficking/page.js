@@ -44,9 +44,9 @@ export default function Page() {
 		image: "/boy-thinking-aged-9-12.jpg",
 		title: "aftercare for child survivors of human trafficking",
 		altText: "boy thinking",
-		budget: "£207,205",
-		budgetNumber: 207205,
-		id: "ff-1",
+		budget: "£199,473",
+		budgetNumber: 199473,
+		id: "PP1018 Uganda",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
@@ -66,6 +66,10 @@ export default function Page() {
 		],
 		link: "/pre-donation",
 	};
+	if (selection.country === "US") {
+		project.budget = "$263,888";
+		project.budgetNumber = 263888;
+	}
 	return (
 		// page wrapper
 		<div className="animate-fade-in">
@@ -147,7 +151,7 @@ export default function Page() {
 				quote="“[The Lighthouse teams are] highly engaged, knowledgeable … and … dedicated to incorporating trauma-informed care into their everyday work with survivors of human trafficking and exploitation.”"
 				author="Independent case study commissioned by the Global Fund to End Modern Slavery"
 			/>
-			<GivingDetails budget={project.budget} />
+			<GivingDetails budget={project.budget} projectTitle={project.title} />
 			<CTABanner
 				title="Make a life-changing impact today!"
 				color="white"

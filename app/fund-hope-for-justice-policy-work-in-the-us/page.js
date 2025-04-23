@@ -44,24 +44,31 @@ export default function Page() {
 		image: "/us-1.jpg",
 		title: "U.S. policy work that will transform how survivors are treated",
 		altText: "Decorative image representing U.S.A",
-		budget: "£207,205",
-		budgetNumber: 207205,
-		id: "ff-2",
+		budget: "£42,000",
+		budgetNumber: 42000,
+		id: "FF25 USA Policy",
 		intro: {
-			title: "Together, we can make a life-changing impact",
-			text: ["this page is in progress, content tbc", "... "],
+			title:
+				"Fund Hope for Justice’s policy work in the U.S. and make a truly lasting impact ",
+			text: [
+				"Hope for Justice is seeking urgent financial investment to enable another year of successful interventions on human trafficking policy and legislative issues in state houses and in Washington, D.C. With your support, we can actively change the landscape for survivors across the United States.",
+				"Funding our policy work and maintaining our presence on the Hill will allow Hope for Justice to continue to change lives for survivors by advocating for bills that change the landscape for survivor relief, allowing them to re-enter society in a meaningful way.",
+			],
 		},
 		projectOutcomes: [
-			"Independent Modern Slavery Advocacy for 30 survivors each month.",
-			"All survivors to receive individual support and a needs & risk assessment.",
-			"Mental health assessments and trauma counselling sessions for survivors.",
-			"All survivors to have an appointed IMSA to act as a co-ordinating focal point for all involved professionals and services during their recovery.",
-			"Provision of work readiness, training, English language lessons and/or education to improve survivors’ long-term financial stability and reduce the risk of retrafficking for them and their dependents.",
-			"Provision of essential items and emergency support to meet basic needs and prevent destitution and re-trafficking (food vouchers, clothing, footwear, toiletries, mobile phone & top-ups, translation services, transport, and emergency accommodation).",
-			"Survivors informed about their legal rights and entitlements, and more able to access these.",
+			"$2,500 funds one roundtable event",
+			"$3,500 funds one month of policy work",
+			"$42,000 funds one year of policy work",
+			"Help share best practice with anti-trafficking colleagues around the world",
+			"Ensure survivor-focused legislation comes into force at the State and Federal level",
+			"Ensure our vital messages are heard at the global level too, at the U.N. Office on Drugs & Crime, the OSCE, Interpol and the Commission on Crime Prevention and Criminal Justice",
 		],
 		link: "/pre-donation",
 	};
+
+	if (selection.country === "US") {
+		project.budget = "$42,000";
+	}
 	return (
 		// page wrapper
 		<div className="animate-fade-in">
@@ -74,56 +81,55 @@ export default function Page() {
 				link={project.link}
 				projectId={project.id}
 				budgetNumber={project.budgetNumber}
+				alternateHeadingText="make a transformational change in the response to human trafficking "
 			/>
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
 			<ProjectStory
-				title="You will help people like Stefan*"
-				quote="“When we arrived at the house, everybody had a bed, apart from me. I had to sleep on pieces of cardboard on the floor in the kitchen.”"
-				image="/imsa-1.jpg"
+				title="You will help ensure survivor-focused legislation comes into force"
+				quote=""
+				image="/us-policy-1.jpg"
 				imagePosition="right"
-				imageAlt="Image used for illustration purposes - credit invisible people Rory Carnegie"
-				imageCredit="Image used for illustration purposes - credit invisible people Rory Carnegie"
-			>
-				Stefan grew up in orphanages and spent time living on the streets, and
-				was exploited in Romania and Bulgaria for forced labour from 2013. He
-				was physically and verbally abused, then targeted by a trafficker. He
-				thought his life would improve with the good job he was promised, but it
-				turned out he had been recruited to beg on the streets and was forced to
-				hand over any money he collected. The trafficker controlled everything,
-				even where he lived. “I didn’t want to go, but he told me I had to, and
-				I was too scared to turn him down,” Stefan said later.
-				<br></br>
-				<br></br>He managed to escape and was put in contact with Hope for
-				Justice. Our Advocates helped ensure he had somewhere to live and helped
-				him manage his council tax and bills. We advocated on his behalf for
-				debts associated with his time in exploitation and recovery to be
-				reduced or wiped, and helped him get new ID to be able to access
-				employment. We helped him with food parcels when he was not able to
-				work, with access to health services, and helped him apply to the
-				Criminal Injuries Compensation Authority.
-			</ProjectStory>
-			<ProjectStory
-				title="Stefan* Says"
-				quote="“I feel good, I feel happy – I wouldn’t have known what to do without Hope for Justice’s help.”"
-				image="/imsa-2.jpg"
-				imagePosition="left"
+				smallTitle={true}
 				imageAlt="Image used for illustration purposes"
 				imageCredit="Image used for illustration purposes"
 			>
-				Stefan* has received a ‘conclusive grounds’ decision, which means he is
-				formally recognised as a victim of modern slavery by the UK Government.
-				He got help with this and other legal matters from Carita Thomas, a
-				solicitor from legal charity ATLEU. She said:
+				Our policy and advocacy on Capitol Hill are informed by our frontline
+				experiences as human trafficking investigators, engaging with victims
+				and survivors every single day. We know the barriers they face and the
+				changes to state and federal legislation that could make their recovery
+				smoother and that could prevent trafficking in the first place. Our
+				policy work is also informed by our expertise as trainers and educators
+				who work with law enforcement, healthcare workers, schools, banks and
+				everyday people who might come into contact with victims.
 				<br></br>
 				<br></br>
-				<strong>
-					“Hope for Justice have been amazing. They were able to use expert
-					knowledge of trafficking and what recovery requires… Their
-					representations as independent modern slavery advocates were essential
-					to build the legal case and I could not have achieved any result
-					without them.”
-				</strong>
+				In recent months, Hope for Justice’s endorsement of the Strengthening
+				Child Exploitation Enforcement Act was welcomed by its introducers, U.S.
+				Senators John Cornyn (R-TX) and Cory Booker (D-NJ) and Representatives
+				Troy Nehls (TX-22) and Madeleine Dean (PA-04).
+				<br></br>
+				<br></br>
+				We have been instrumental in pushing forward the Trafficking Survivors
+				Relief Act (TSRA), which Hope for Justice has recently been introduced
+				to Congress. Philanthropic funding for our policy work enabled Hope for
+				Justice to secure stakeholders for the TSRA Coalition letter, which we
+				headed. Our support and endorsement was quoted by the Members of
+				Congress introducing the bill, with our support noted by CNN Politics
+				and other media organizations.
+				<br></br>
+				<br></br>
+				Separately, the Frederick Douglass Trafficking Victims Protection Act
+				passed the House with our support. The legislation was authored by Rep.
+				Chris Smith (R-New Jersey), who quoted Hope for Justice’s support and
+				endorsement and values us as a partner and a “major anti-trafficking
+				organization”. Our close involvement in these two major bills was only
+				possible thanks to philanthropic funding for our policy work, which also
+				enabled us to host Senate roundtables in Washington, D.C. This level of
+				influence translates to media interest and opportunities too, helping to
+				shape the national conversation and to get more people pushing their own
+				representatives for positive change in the response to human
+				trafficking.
 			</ProjectStory>
 			<ProjectOutcomes
 				outcomes={project.projectOutcomes}
@@ -139,12 +145,12 @@ export default function Page() {
 				projectTitle={project.title}
 			/>
 			<BoxQuote
-				image="/asc.jpg"
-				imageAlt="Eleanor Lyons, UK Independent Anti-Slavery Commissioner"
-				quote="“This programme is a great example of a collaborative approach that places survivors’ needs at the heart of it. The IMSAs’ advocacy work for victims and survivors of the most appalling crimes of modern slavery and human trafficking is so important. The IMSAs demonstrate a model that works, and it is essential that more victims and survivors have access to the programme.”"
-				author="Eleanor Lyons, UK Independent Anti-Slavery Commissioner"
+				image="/ng-1.jpg"
+				imageAlt="Hope for Justice Global Ambassador and Co-Founder, Natalie Grant"
+				quote="“Every single one of us, no matter who you are, no matter where you’re from, no matter whether you have a platform or you are just serving your family, every single one of us can do something to make a difference.”"
+				author="Hope for Justice Global Ambassador and Co-Founder, Natalie Grant"
 			/>
-			<GivingDetails budget={project.budget} />
+			<GivingDetails budget={project.budget} projectTitle={project.title} />
 			<CTABanner
 				title="Make a life-changing impact today!"
 				color="white"

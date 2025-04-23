@@ -1,9 +1,11 @@
 import Container from "./Container";
 import { useState } from "react";
 import clsx from "clsx";
+import { useSelection } from "../context/SelectionContext";
 
-export default function GivingDetails({ budget }) {
+export default function GivingDetails({ budget, projectTitle }) {
 	const [showDetails, setShowDetails] = useState(true);
+	const { selection } = useSelection();
 	const handleShowDetails = () => {
 		setShowDetails(!showDetails);
 	};
@@ -35,8 +37,7 @@ export default function GivingDetails({ budget }) {
 							{showDetails && (
 								<p className="animate-fade-in max-w-[500px] text-sm lg:text-lg font-bold">
 									A minimum of 90 percent of your donation will go directly to
-									funding this project for survivors of modern slavery in
-									Uganda.
+									funding {projectTitle}.
 								</p>
 							)}
 						</div>
@@ -64,7 +65,10 @@ export default function GivingDetails({ budget }) {
 						world in the service of our mission to end modern-day slavery.
 					</p>
 					<p className="mb-4 text-sm max-w-4xl mx-auto">
-						<strong>The minimum contribution to this project: £1,000.</strong>{" "}
+						<strong>
+							The minimum contribution to this project:{" "}
+							{selection.country === "US" ? "$1,000" : "£1,000"}.
+						</strong>{" "}
 						Smaller donations are gratefully received and will make an enormous
 						difference but they cannot be allocated via the Freedom Foundation.
 					</p>

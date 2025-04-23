@@ -6,7 +6,10 @@ import Container from "../components/Container";
 import Highlight from "../components/Highlight";
 import RangeSlider from "../components/RangeSlider";
 import { redirect } from "next/navigation";
-import FF3 from "../components/pre-donation/FF3";
+import IMSA from "../components/pre-donation/IMSA";
+import UgandaLH from "../components/pre-donation/UgandaLH";
+import USPolicy from "../components/pre-donation/USPolicy";
+import DonateViaButtons from "../components/pre-donation/DonateViaButtons";
 
 export default function Page() {
 	const { selection, setSelection } = useSelection();
@@ -38,35 +41,61 @@ export default function Page() {
 		redirect("/");
 	}
 
-	const handleSliderChange = (value) => {
-		switch (value) {
-			case 1:
-				value = 1000;
-				break;
-			case 2:
-				value = 4000;
-				break;
-			case 3:
-				value = 9000;
-				break;
-			case 4:
-				value = 16000;
-				break;
-			case 5:
-				value = 36000;
-				break;
-			case 6:
-				value = selection.budgetNumber;
-				break;
-		}
-		setAmount(value);
-		console.log(amount);
-	};
+	const PP1028DeborahAmounts = [
+		{ amount: 2000, reason: "Will (reason A PP1028)" },
+		{ amount: 5000, reason: "Will (reason B PP1028)" },
+		{ amount: 10000, reason: "Will (reason C PP1028)" },
+		{ amount: 20000, reason: "Will (reason D PP1028)" },
+		{ amount: 50000, reason: "Will (reason D PP1028)" },
+	];
+
+	const PP1010MidwestAmounts = [
+		{ amount: 2000, reason: "Will (reason A PP1010)" },
+		{ amount: 5000, reason: "Will (reason B PP1010)" },
+		{ amount: 10000, reason: "Will (reason C PP1010)" },
+		{ amount: 20000, reason: "Will (reason D PP1010)" },
+		{ amount: 50000, reason: "Will (reason D PP1010)" },
+	];
+
+	const PP1009TennesseeAmounts = [
+		{ amount: 2000, reason: "Will (reason A PP1010)" },
+		{ amount: 5000, reason: "Will (reason B PP1010)" },
+		{ amount: 10000, reason: "Will (reason C PP1010)" },
+		{ amount: 20000, reason: "Will (reason D PP1010)" },
+		{ amount: 50000, reason: "Will (reason D PP1010)" },
+	];
 
 	return (
 		<>
-			{selection.projectId === "ff-3" && (
-				<FF3 loading={loading} setLoading={setLoading} />
+			{selection.projectId === "PP1006 Advocacy" && (
+				<IMSA loading={loading} setLoading={setLoading} />
+			)}
+			{selection.projectId === "PP1018 Uganda" && (
+				<UgandaLH loading={loading} setLoading={setLoading} />
+			)}
+			{selection.projectId === "FF25 USA Policy" && (
+				<USPolicy loading={loading} setLoading={setLoading} />
+			)}
+			{selection.projectId === "PP1028 Deborah" && (
+				<DonateViaButtons
+					amounts={PP1028DeborahAmounts}
+					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
+					defaultReason={"Will... (default reason PP1028)"}
+				/>
+			)}
+			{selection.projectId === "PP1010 Midwest" && (
+				<DonateViaButtons
+					amounts={PP1010MidwestAmounts}
+					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
+					defaultReason={"Will... (default reason PP1010)"}
+				/>
+			)}
+			{selection.projectId === "PP1009 Tennessee" && (
+				<DonateViaButtons
+					amounts={PP1009TennesseeAmounts}
+					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
+					defaultReason={"Will... (default reason PP1009)"}
+				/>
 			)}
 		</>
 	);

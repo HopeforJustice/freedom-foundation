@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { SelectionProvider } from "./context/SelectionContext";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
+import Footer from "./components/Footer";
 
 const canela = localFont({
 	src: "fonts/Canela-Medium.woff2",
@@ -71,6 +72,7 @@ export default async function RootLayout({ children }) {
 						<SelectionProvider country={country}>
 							<Header />
 							<div className="relative">{children}</div>
+							<Footer />
 						</SelectionProvider>
 					</Suspense>
 				</div>

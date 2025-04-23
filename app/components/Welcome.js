@@ -50,8 +50,9 @@ export default function Welcome() {
 			y: -50,
 			duration: 0.5,
 			onComplete: () => {
-				setSelection({ ...selection, name: nameInput });
-				console.log(selection);
+				const updatedSelection = { ...selection, name: nameInput };
+				setSelection(updatedSelection);
+				localStorage.setItem("selection", JSON.stringify(updatedSelection));
 			},
 		});
 	};
@@ -109,7 +110,8 @@ export default function Welcome() {
 							/>
 							<div className="col-start-1 row-start-1 bg-linear-to-t from-black h-1/2 w-full self-end opacity-35"></div>
 							<p className="col-start-1 row-start-1 text-white font-bold self-end justify-center text-center z-10 p-2 sm:text-md md:p-4 md:text-xl">
-								I represent an organisation
+								I represent an{" "}
+								{selection.country === "US" ? "organization" : "organisation"}
 							</p>
 						</div>
 					</div>
@@ -122,8 +124,10 @@ export default function Welcome() {
 					className="flex w-full flex-col items-center mt-20 md:mt-40 p-4 text-center"
 				>
 					<p className="text-xl md:text-2xl font-bold mb-8 max-w-[30ch]">
-						{type === "individual"
+						{type === "individual" && selection.country !== "US"
 							? "Let's get to know each other a bit more. What is your first name?"
+							: selection.country === "US"
+							? "What is the name of your organization?"
 							: "What is the name of your organisation?"}
 					</p>
 					<form
