@@ -13,39 +13,7 @@ export default function Home() {
 	const [loading, setLoading] = useState(true);
 	const searchParams = useSearchParams();
 
-	// useEffect(() => {
-	// 	const name = searchParams.get("name");
-	// 	const type = searchParams.get("type");
-	// 	const geoOverride = searchParams.get("geoCountry");
-	// 	const storedSelection = localStorage.getItem("selection");
-
-	// 	// If there are values in the URL, use them
-	// 	if (name || type || geoOverride) {
-	// 		const newSelection = {
-	// 			...selection,
-	// 			name: name || selection.name,
-	// 			type: type || selection.type,
-	// 			country: geoOverride || selection.country,
-	// 		};
-
-	// 		setSelection(newSelection);
-	// 		localStorage.setItem("selection", JSON.stringify(newSelection));
-	// 		setLoading(false);
-	// 		return;
-	// 	}
-
-	// 	// Fallback to localStorage only if no values in URL
-	// 	if (storedSelection) {
-	// 		const parsed = JSON.parse(storedSelection);
-	// 		setSelection(parsed);
-	// 	}
-
-	// 	setLoading(false);
-	// }, [searchParams, setSelection]);
-
-	// if (loading) {
-	// 	return null;
-	// }
+	//change for preview branch
 
 	return (
 		<>
