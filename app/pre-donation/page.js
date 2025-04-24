@@ -71,7 +71,7 @@ export default function Page() {
 		baseDonateUrl = "https://donate.hopeforjustice.org";
 	} else if (nextEnv === "preview") {
 		baseDonateUrl =
-			"https://donation-app-git-preview-jamesholt1995s-projects.vercel.app/";
+			"https://donation-app-git-preview-hope-for-justice.vercel.app";
 	} else {
 		baseDonateUrl = "http://localhost:3001";
 	}
