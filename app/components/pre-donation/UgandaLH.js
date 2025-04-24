@@ -6,7 +6,7 @@ import Highlight from "../Highlight";
 import RangeSlider from "../RangeSlider";
 import Link from "next/link";
 
-export default function FF3({ loading, setLoading }) {
+export default function FF3({ loading, setLoading, baseDonateUrl }) {
 	const { selection, setSelection } = useSelection();
 	const costPerChild = selection.budgetNumber / 250;
 	const calculateCost = (children) => {
@@ -21,10 +21,6 @@ export default function FF3({ loading, setLoading }) {
 		currency = "usd";
 	}
 	const currencySymbol = currency === "gbp" ? "£" : "$";
-	const baseDonateUrl =
-		process.env.NEXT_PUBLIC_ENV === "production"
-			? "https://donate.hopeforjustice.org"
-			: "http://localhost:3001";
 
 	const query = new URLSearchParams({
 		amount,

@@ -5,7 +5,12 @@ import { useSelection } from "../../context/SelectionContext";
 import Link from "next/link";
 import clsx from "clsx";
 
-export default function DonateViaButtons({ amounts, givingTo, defaultReason }) {
+export default function DonateViaButtons({
+	amounts,
+	givingTo,
+	defaultReason,
+	baseDonateUrl,
+}) {
 	const { selection, setSelection } = useSelection();
 
 	const [amount, setAmount] = useState(amounts[0].amount);
@@ -16,10 +21,6 @@ export default function DonateViaButtons({ amounts, givingTo, defaultReason }) {
 		currency = "usd";
 	}
 	const currencySymbol = currency === "gbp" ? "£" : "$";
-	const baseDonateUrl =
-		process.env.NEXT_PUBLIC_ENV === "production"
-			? "https://donate.hopeforjustice.org"
-			: "http://localhost:3001";
 
 	const query = new URLSearchParams({
 		amount,

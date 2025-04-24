@@ -65,20 +65,44 @@ export default function Page() {
 		{ amount: 50000, reason: "Will (reason D PP1010)" },
 	];
 
+	let baseDonateUrl;
+	const nextEnv = process.env.NEXT_PUBLIC_ENV;
+	if (nextEnv === "production") {
+		baseDonateUrl = "https://donate.hopeforjustice.org";
+	} else if (nextEnv === "preview") {
+		baseDonateUrl =
+			"https://donation-app-git-preview-jamesholt1995s-projects.vercel.app/";
+	} else {
+		baseDonateUrl = "http://localhost:3001";
+	}
+
 	return (
 		<>
 			{selection.projectId === "PP1006 Advocacy" && (
-				<IMSA loading={loading} setLoading={setLoading} />
+				<IMSA
+					loading={loading}
+					setLoading={setLoading}
+					baseDonateUrl={baseDonateUrl}
+				/>
 			)}
 			{selection.projectId === "PP1018 Uganda" && (
-				<UgandaLH loading={loading} setLoading={setLoading} />
+				<UgandaLH
+					loading={loading}
+					setLoading={setLoading}
+					baseDonateUrl={baseDonateUrl}
+				/>
 			)}
 			{selection.projectId === "FF25 USA Policy" && (
-				<USPolicy loading={loading} setLoading={setLoading} />
+				<USPolicy
+					loading={loading}
+					setLoading={setLoading}
+					baseDonateUrl={baseDonateUrl}
+				/>
 			)}
 			{selection.projectId === "PP1028 Deborah" && (
 				<DonateViaButtons
 					amounts={PP1028DeborahAmounts}
+					baseDonateUrl={baseDonateUrl}
 					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
 					defaultReason={"Will... (default reason PP1028)"}
 				/>
@@ -86,6 +110,7 @@ export default function Page() {
 			{selection.projectId === "PP1010 Midwest" && (
 				<DonateViaButtons
 					amounts={PP1010MidwestAmounts}
+					baseDonateUrl={baseDonateUrl}
 					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
 					defaultReason={"Will... (default reason PP1010)"}
 				/>
@@ -93,6 +118,7 @@ export default function Page() {
 			{selection.projectId === "PP1009 Tennessee" && (
 				<DonateViaButtons
 					amounts={PP1009TennesseeAmounts}
+					baseDonateUrl={baseDonateUrl}
 					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
 					defaultReason={"Will... (default reason PP1009)"}
 				/>
