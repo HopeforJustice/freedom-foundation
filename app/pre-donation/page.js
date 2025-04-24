@@ -10,6 +10,7 @@ import IMSA from "../components/pre-donation/IMSA";
 import UgandaLH from "../components/pre-donation/UgandaLH";
 import USPolicy from "../components/pre-donation/USPolicy";
 import DonateViaButtons from "../components/pre-donation/DonateViaButtons";
+import EthiopiaLH from "../components/pre-donation/EthiopiaLH";
 
 export default function Page() {
 	const { selection, setSelection } = useSelection();
@@ -41,28 +42,60 @@ export default function Page() {
 		redirect("/");
 	}
 
-	const PP1028DeborahAmounts = [
-		{ amount: 2000, reason: "Will (reason A PP1028)" },
-		{ amount: 5000, reason: "Will (reason B PP1028)" },
-		{ amount: 10000, reason: "Will (reason C PP1028)" },
-		{ amount: 20000, reason: "Will (reason D PP1028)" },
-		{ amount: 50000, reason: "Will (reason D PP1028)" },
-	];
-
 	const PP1010MidwestAmounts = [
-		{ amount: 2000, reason: "Will (reason A PP1010)" },
-		{ amount: 5000, reason: "Will (reason B PP1010)" },
-		{ amount: 10000, reason: "Will (reason C PP1010)" },
-		{ amount: 20000, reason: "Will (reason D PP1010)" },
-		{ amount: 50000, reason: "Will (reason D PP1010)" },
+		{
+			amount: 2000,
+			reason:
+				"will provide ten survivors with emergency hotel stays and overnight necessities like food, clothes, and hygiene products upon immediate exit of their trafficking situation.",
+		},
+		{
+			amount: 5000,
+			reason:
+				"will fund a full year of vehicle expenses for investigators. Vehicles are critical for surveillance and survivor care. This cost includes gas, maintenance, and insurance.",
+		},
+		{
+			amount: 10000,
+			reason:
+				"will provide full investigative services for 10 survivors, including costs for surveillance, case management software, and investigator time.",
+		},
+		{
+			amount: 20000,
+			reason:
+				"will fund 12 sessions of two-day training to different groups of law enforcement, first responders, or critical stakeholders on spotting the signs and responding to human trafficking.",
+		},
+		{
+			amount: 50000,
+			reason:
+				"will aid in the launch of a new survivor care arm for our Midwest program",
+		},
 	];
 
 	const PP1009TennesseeAmounts = [
-		{ amount: 2000, reason: "Will (reason A PP1010)" },
-		{ amount: 5000, reason: "Will (reason B PP1010)" },
-		{ amount: 10000, reason: "Will (reason C PP1010)" },
-		{ amount: 20000, reason: "Will (reason D PP1010)" },
-		{ amount: 50000, reason: "Will (reason D PP1010)" },
+		{
+			amount: 2000,
+			reason:
+				"will provide ten survivors with emergency hotel stays and overnight necessities like food, clothes, and hygiene products upon immediate exit of their trafficking situation.",
+		},
+		{
+			amount: 5000,
+			reason:
+				"will fund a full year of vehicle expenses for investigators. Vehicles are critical for surveillance and survivor care. This cost includes gas, maintenance, and insurance.",
+		},
+		{
+			amount: 10000,
+			reason:
+				"will provide full investigative services for 10 survivors, including costs for surveillance, case management software, and investigator time.",
+		},
+		{
+			amount: 20000,
+			reason:
+				"will fund 12 sessions of two-day training to different groups of law enforcement, first responders, or critical stakeholders on spotting the signs and responding to human trafficking.",
+		},
+		{
+			amount: 268897,
+			reason:
+				"will fund this entire program for one year, changing young lives forever.",
+		},
 	];
 
 	let baseDonateUrl;
@@ -100,11 +133,10 @@ export default function Page() {
 				/>
 			)}
 			{selection.projectId === "PP1028 Deborah" && (
-				<DonateViaButtons
-					amounts={PP1028DeborahAmounts}
+				<EthiopiaLH
+					loading={loading}
+					setLoading={setLoading}
 					baseDonateUrl={baseDonateUrl}
-					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
-					defaultReason={"Will... (default reason PP1028)"}
 				/>
 			)}
 			{selection.projectId === "PP1010 Midwest" && (

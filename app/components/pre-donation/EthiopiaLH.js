@@ -8,9 +8,12 @@ import Link from "next/link";
 
 export default function FF3({ loading, setLoading, baseDonateUrl }) {
 	const { selection, setSelection } = useSelection();
-
-	const [amount, setAmount] = useState(1000);
-	const [monthNumber, setMonthNumber] = useState(1);
+	const costPerChild = selection.budgetNumber / 250;
+	const calculateCost = (children) => {
+		return Math.ceil(costPerChild * children);
+	};
+	const initialAmount = calculateCost(1) > 1000 ? calculateCost(1) : 1000;
+	const [amount, setAmount] = useState(initialAmount);
 	const [survivorNumber, setSurvivorNumber] = useState(1);
 	const stripeMode = process.env.NEXT_PUBLIC_STRIPE_MODE;
 	let currency = "gbp";
@@ -30,8 +33,7 @@ export default function FF3({ loading, setLoading, baseDonateUrl }) {
 		monthlyAllowed: "false",
 		allowChange: "false",
 		donorType: selection.type,
-		givingTo:
-			"fund independent advocacy for survivors of modern slavery via Hope for Justice's Freedom Foundation.",
+		givingTo: "fund safe shelter and care for exploited children in Ethiopia",
 	});
 
 	// Only include organisationName if donor is not an individual
@@ -43,68 +45,26 @@ export default function FF3({ loading, setLoading, baseDonateUrl }) {
 
 	// for imsa calcs
 	useEffect(() => {
-		if (amount === 4000) {
-			setMonthNumber(2);
-			setSurvivorNumber(2);
-		} else if (amount === 9000) {
-			setMonthNumber(3);
-			setSurvivorNumber(3);
-		} else if (amount === 16000) {
-			setMonthNumber(4);
-			setSurvivorNumber(4);
-		} else if (amount === 36000) {
-			setMonthNumber(6);
-			setSurvivorNumber(6);
-		} else if (amount >= 1000) {
-			const MAX_MONTHS = 12;
-			const MAX_SURVIVORS = 30;
-			const COST_PER_UNIT = 1000;
-
-			let bestMonths = 1;
-			let bestSurvivors = 1;
-			let maxUsedAmount = 0;
-
-			for (let months = MAX_MONTHS; months >= 1; months--) {
-				let survivors = Math.floor(amount / (months * COST_PER_UNIT));
-				survivors = Math.min(survivors, MAX_SURVIVORS);
-
-				const usedAmount = survivors * months * COST_PER_UNIT;
-
-				if (
-					survivors >= 1 &&
-					usedAmount <= amount &&
-					usedAmount > maxUsedAmount
-				) {
-					bestMonths = months;
-					bestSurvivors = survivors;
-					maxUsedAmount = usedAmount;
-				}
-			}
-
-			setMonthNumber(bestMonths);
-			setSurvivorNumber(bestSurvivors);
-		} else {
-			setMonthNumber(1);
-			setSurvivorNumber(1);
-		}
-	}, [amount]);
+		let children = amount / costPerChild;
+		setSurvivorNumber(Math.floor(children));
+	}, [amount, selection.budgetNumber]);
 
 	const handleSliderChange = (value) => {
 		switch (value) {
 			case 1:
-				value = 1000;
+				value = initialAmount;
 				break;
 			case 2:
-				value = 4000;
+				value = calculateCost(5);
 				break;
 			case 3:
-				value = 9000;
+				value = calculateCost(10);
 				break;
 			case 4:
-				value = 16000;
+				value = calculateCost(20);
 				break;
 			case 5:
-				value = 36000;
+				value = calculateCost(100);
 				break;
 			case 6:
 				value = selection.budgetNumber;
@@ -155,15 +115,13 @@ export default function FF3({ loading, setLoading, baseDonateUrl }) {
 							{currencySymbol}
 							{amount.toLocaleString()}{" "}
 							<span className="mt-4">
-								will enable Independent Modern Slavery Advocacy for{" "}
+								will serve{" "}
 								<Highlight style="small">
 									{survivorNumber}&nbsp;
-									{survivorNumber > 1 ? "survivors" : "survivor"}
+									{survivorNumber > 1 ? "children" : "child"}
 								</Highlight>{" "}
-								for{" "}
-								<Highlight style="small">
-									{monthNumber}&nbsp;{monthNumber > 1 ? "months" : "month"}
-								</Highlight>
+								across the Ethiopia Lighthouse programme for{" "}
+								<Highlight style="small">12 months</Highlight>
 							</span>
 						</p>
 					)}

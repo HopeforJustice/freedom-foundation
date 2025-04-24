@@ -84,7 +84,7 @@ export default function Page() {
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
 			<ProjectStory
-				title="You will help young people in TN"
+				title="You will help young people find freedom from trafficking"
 				quote=""
 				image="/tn-2.jpg"
 				imagePosition="left"
@@ -122,7 +122,7 @@ export default function Page() {
 				opened an official human trafficking investigation, based on this
 				intelligence. We cannot share more information publicly while the
 				investigation continues and for the protection of the 14-year-old girl.
-				We are continuing to support the family
+				We are continuing to support the family.
 			</ProjectStory>
 			<ProjectOutcomes
 				outcomes={project.projectOutcomes}

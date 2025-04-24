@@ -51,7 +51,7 @@ export default function Page() {
 			title: "Together, we can make a life-changing impact",
 			text: [
 				"The Hope for Justice Iowa Regional Center covers the Midwest region and has a strong track record of identifying victims of human trafficking, locating them and getting them to safety. We share our cases and intelligence with law enforcement and prosecutors to ensure the criminals are brought to justice.",
-				"With your help we can continue to find survivors of human trafficking and get them back home to their families whilst bringing the perpetrators to justice.",
+				"With your help we can take a stand against human trafficking. We can identify victims, support survivors and prevent exploitation.",
 			],
 		},
 		projectOutcomes: [
@@ -85,7 +85,7 @@ export default function Page() {
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
 			<ProjectStory
-				title="You will help girls like Naomi*"
+				title="You will help survivors like Naomi*"
 				quote=""
 				image="/naomi-stock.jpg"
 				imagePosition="left"
@@ -114,12 +114,10 @@ export default function Page() {
 				During this conversation, she named and identified her traffickers and
 				also agreed to meet with a local law enforcement agent if we would
 				accompany her.<br></br> <br></br>
-				This was an incredibly brave step, given her trauma. Naomi provided
-				critical evidence, including a timeline of events, locations, witness
-				details and the names of other victims. Hope for Justice has continued
-				to support Naomi. She is getting aftercare services and is moving
-				forward in her ongoing recovery. We recently handed this case over to
-				the U.S. Attorney’s Office for further investigation and prosecution.
+				Naomi provided critical evidence, including a timeline of events,
+				locations, witness details and the names of other victims. Hope for
+				Justice has continued to support Naomi. She is getting aftercare
+				services and is moving forward in her ongoing recovery.
 				<br></br>
 				<br></br>
 				<strong>
@@ -144,10 +142,10 @@ export default function Page() {
 				title="Hope for Justice works to investigate potential human trafficking cases and identify victims."
 				quote=""
 				smallTitle={true}
-				image="/david.jpg"
+				image="/iowa-training.jpg"
 				imagePosition="right"
-				imageAlt="Pictured: David Gonzalez"
-				imageCredit="Pictured: David Gonzalez"
+				imageAlt="Hope for Justice sharing key messages about the risks of online exploitation with students and faculty at schools in Cass County, Iowa"
+				imageCredit="Hope for Justice sharing key messages about the risks of online exploitation with students and faculty at schools in Cass County, Iowa"
 			>
 				Hope for Justice’s team of investigators in the Midwest has strong
 				relationships with law enforcement and often accepts referrals for cases
@@ -155,20 +153,19 @@ export default function Page() {
 				team works closely with other partners and organizations to refer
 				victims once identified.<br></br>
 				<br></br>
-				Midwest team leader David Gonzalez has over 30 years of combined
-				military and law enforcement experience. As a detective, he worked sex
-				crimes (adult and children), violent crime, major cases, cold-case
-				homicides, and trafficking investigations.<br></br>
-				<br></br>
-				He led his team at federal, state and local law enforcement levels in
-				cross-state sex trafficking and labor trafficking investigations. He has
-				multiple awards for this from the Iowa governor, the U.S. Attorney’s
-				Office and federal government, and two “Law Enforcement Officer of the
-				Year” awards for his investigations.<br></br>
+				The team also provide training and education, including awareness
+				sessions at schools to ensure students know about the risks of online
+				enticement and online sexual exploitation. Approximately 2 in 5 victims
+				of sex trafficking in the U.S.A are recruited online, according to data
+				from the Department of Justice. That makes online platforms – including
+				social media, gaming sites and messaging apps – the most common place
+				for victim recruitment. The topics we cover include online safety,
+				recognizing safe relationships, managing peer pressure and navigating
+				social media.
 				<br></br>
 				<strong>
-					David’s team co-ordinates closely with other Hope for Justice teams at
-					our other Regional Centers and around the world, and with our
+					Our Midwest team co-ordinates closely with other Hope for Justice
+					teams at our other Regional Centers and around the world, and with our
 					survivor-focused advocacy and support workers.
 				</strong>
 			</ProjectStory>

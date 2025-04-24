@@ -140,21 +140,36 @@ export default function DonateViaButtons({
 							Donate {currencySymbol}
 							{amount.toLocaleString()} via card or bank transfer
 						</Link>
-						<Link
-							className="bg-hfj-black px-5 py-4 rounded-[100px] text-white font-bold text-lg lg:text-xl hover:scale-105 inline-block transition"
-							href="#"
-						>
-							Get in touch
-						</Link>
 					</div>
-					<p className="text-sm lg:text-base max-w-[600px]">
-						If you have any questions about the Freedom Foundation or your
-						donation select <strong>&quot;Get in touch&quot;</strong> and we
-						will be in contact.
+					<p className="text-sm lg:text-base max-w-[1200px] mb-4 pt-4">
+						Questions about the Freedom Foundation or your donation? Email{" "}
+						<strong className="text-hfj-red underline">
+							{selection.country === "US" ? (
+								<a href="mailto:donorsupport.us@hopeforjustice.org">
+									donorsupport.us@hopeforjustice.org
+								</a>
+							) : (
+								<a href="mailto:supporters@hopeforjustice.org">
+									supporters@hopeforjustice.org
+								</a>
+							)}
+						</strong>{" "}
+						and you will hear from us soon!
+					</p>
+					<p className="text-sm lg:text-base max-w-[1200px]">
+						Any donations received above this project’s budget of{" "}
+						{currencySymbol}
+						{selection.budgetNumber.toLocaleString()} will be reallocated to
+						other Hope for Justice projects and costs around the world in the
+						service of our mission to end modern slavery and human trafficking.
+						The minimum contribution to this project:{" "}
+						{selection.country === "US" ? "$1,000" : "£1,000"} Smaller donations
+						are gratefully received and will make an enormous difference but
+						they cannot be allocated via the Freedom Foundation.
 					</p>
 				</div>
 			</div>
-			<div className="h-20 w-full"></div>
+			<div className="h-10 w-full"></div>
 		</Container>
 	);
 }

@@ -44,13 +44,13 @@ export default function Page() {
 		image: "/boy-thinking-aged-9-12.jpg",
 		title: "aftercare for child survivors of human trafficking",
 		altText: "boy thinking",
-		budget: "£199,473",
-		budgetNumber: 199473,
+		budget: "£169,957",
+		budgetNumber: 169957,
 		id: "PP1018 Uganda",
 		intro: {
 			title: "Together, we can make a life-changing impact",
 			text: [
-				"Hope for Justice Lighthouses in Uganda’s capital city, Kampala, have for many years offered a place of safety and healing for child survivors of trafficking and those most vulnerable to being targeted. In the Lighthouse, children get critical services such as healthcare, catch-up education, psychosocial support and life skills, before we seek to safely reintegrate them into families and communities.",
+				"Hope for Justice Lighthouse in Uganda’s capital city, Kampala, has for many years offered a place of safety and healing for child survivors of trafficking and those most vulnerable to being targeted. In the Lighthouse, children get critical services such as healthcare, catch-up education, psychosocial support and life skills, before we seek to safely reintegrate them into families and communities.",
 				"With your help, we can reunite more children with their families and give each child the care they need.",
 			],
 		},
@@ -67,8 +67,8 @@ export default function Page() {
 		link: "/pre-donation",
 	};
 	if (selection.country === "US") {
-		project.budget = "$263,888";
-		project.budgetNumber = 263888;
+		project.budget = "$225,975";
+		project.budgetNumber = 225975;
 	}
 	return (
 		// page wrapper
@@ -86,7 +86,7 @@ export default function Page() {
 			<ProjectIntro title={project.intro.title} text={project.intro.text} />
 			<FreedomFoundationBanner />
 			<ProjectStory
-				title="You will help people like Alumu*"
+				title="You will help children like Alumu*"
 				quote=""
 				image="/alumu-1.jpg"
 				imagePosition="left"
@@ -94,43 +94,22 @@ export default function Page() {
 				imageCredit="Image used for illustration purposes"
 				titleTop={true}
 			>
-				16-year-old Alumu just wanted to go to school and spend time with her
-				friends, but sadly what was happening to her at home was making that
-				impossible. Her uncle was abusing her trust in him, and exploiting her
-				repeatedly for sex. She understood that what was being done to her was
-				wrong and a violation, and she bravely reported it. Thankfully, the
-				police intervened and he was arrested.
-				<br></br>
-				<br></br>
-				Alumu was referred to a Hope for Justice Lighthouse for care and
-				protection. She received trauma-informed care services including
-				psychosocial support, business skills training, life skills and
-				healthcare information, as well as education on human trafficking. She
-				also began vocational training with a partner organisation, to pursue
-				her passion in tailoring.
-				<br></br>
-				<br></br>
-				<strong>
-					When Hope for Justice social workers spoke with her family, some
-					relatives made it clear the young girl was not welcome home.
-				</strong>
-				<br></br>
-				<br></br>
-				They couldn’t understand why she would report her uncle and believed she
-				ought to have stayed quiet. Hope for Justice realized that unfortunately
-				her community might shun her for exposing her uncle’s crimes to the
-				world, and because of the stigma and shame that still persist in that
-				community about matters to do with sexual abuse.
-				<br></br>
-				<br></br>
-				So, knowing that it might no longer be safe for her there, last summer
-				Hope for Justice took her to live with her stepmother instead, who
-				promised her a loving and safe home. Alumu was overjoyed, and she is now
-				a self-employed tailor and still living with her stepmother. During a
-				recent follow-up visit, they were provided support with
-				income-generation activities, to improve their financial stability and
-				resilience. Alumu aspires to expand her business and buy the land for
-				them to have their own house.
+				Among those helped at our Lighthouses was 16-year-old Alumu, sexually
+				abused and trafficked by her own uncle. She understood that what was
+				being done to her was wrong and a violation, and she bravely reported
+				it. She received trauma-informed care, support and protection at our
+				Lighthouse, plus medical treatment and a chance to process what had
+				happened to her. <br></br>
+				<br></br>But when it was time for her to move on, sadly her community
+				shunned her for having exposing her uncle&apos;s crimes to the world.
+				They believed she ought to have stayed quiet, and our social workers
+				knew it was unsafe for her in that community. Instead, we tracked down
+				her stepmother, who was happy to take her in. Alumu has been living
+				happily there and is now a self-employed tailor, using business skills
+				she learned while in our care. She is proof that our past does not have
+				to define our future. Alumu&apos;s story is just one of many. Every
+				year, we support thousands of people like Alumu on their journey to
+				freedom and recovery.
 			</ProjectStory>
 			<ProjectOutcomes
 				outcomes={project.projectOutcomes}

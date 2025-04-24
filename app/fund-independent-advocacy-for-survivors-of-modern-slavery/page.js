@@ -57,7 +57,7 @@ export default function Page() {
 			],
 		},
 		projectOutcomes: [
-			"Independent Modern Slavery Advocacy for 30 survivors each month.",
+			"Independent Modern Slavery Advocacy for 32 survivors each month.",
 			"All survivors to receive individual support and a needs & risk assessment.",
 			"Mental health assessments and trauma counselling sessions for survivors.",
 			"All survivors to have an appointed IMSA to act as a co-ordinating focal point for all involved professionals and services during their recovery.",
