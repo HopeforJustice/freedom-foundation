@@ -144,7 +144,7 @@ export default function Page() {
 					amounts={PP1010MidwestAmounts}
 					baseDonateUrl={baseDonateUrl}
 					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
-					defaultReason={"Will... (default reason PP1010)"}
+					defaultReason={`will go directly towards funding ${selection.projectTitle}`}
 				/>
 			)}
 			{selection.projectId === "PP1009 Tennessee" && (
@@ -152,7 +152,7 @@ export default function Page() {
 					amounts={PP1009TennesseeAmounts}
 					baseDonateUrl={baseDonateUrl}
 					givingTo={`fund ${selection.projectTitle} via Hope for Justice's Freedom Foundation.`}
-					defaultReason={"Will... (default reason PP1009)"}
+					defaultReason={`will go directly towards funding ${selection.projectTitle}`}
 				/>
 			)}
 		</>
