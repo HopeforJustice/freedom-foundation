@@ -42,6 +42,7 @@ export default function Page() {
 		redirect("/");
 	}
 
+	//
 	const PP1010MidwestAmounts = [
 		{
 			amount: 2000,
