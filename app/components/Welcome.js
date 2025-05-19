@@ -124,11 +124,14 @@ export default function Welcome() {
 					className="flex w-full flex-col items-center mt-20 md:mt-40 p-4 text-center"
 				>
 					<p className="text-xl md:text-2xl font-bold mb-8 max-w-[30ch]">
-						{type === "individual" && selection.country !== "US"
-							? "Let's get to know each other a bit more. What is your first name?"
-							: selection.country === "US"
-							? "What is the name of your organization?"
-							: "What is the name of your organisation?"}
+						{type === "individual" ? (
+							"Let's get to know each other a bit more. What is your first name?"
+						) : (
+							<span>
+								What is the name of your{" "}
+								{selection.country === "US" ? "organization" : "organisation"}?
+							</span>
+						)}
 					</p>
 					<form
 						onSubmit={(e) => {
